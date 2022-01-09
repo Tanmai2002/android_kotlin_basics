@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".DataFragment">
 <data>
     <variable
@@ -11,6 +12,7 @@
         type="com.dazz.androidbasickotlintemplates.DataFragment" />
 </data>
 <FrameLayout
+    android:layout_margin="5dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
@@ -19,6 +21,20 @@
         android:textSize="25sp"
         android:text="@{@string/number(viewModel.data)}"
         tools:text="Number :1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increase"
+        android:onClick="@{()->viewModel.inc()}"
+        android:layout_marginTop="50dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increase by binding adapters"
+        app:inc_with_binding_adapters="@{viewModel}"
+        android:layout_marginTop="100dp"/>
+
 </FrameLayout>
 
 </layout>
